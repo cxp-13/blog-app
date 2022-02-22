@@ -22,16 +22,18 @@
                 <span>{{article.createDate | format}}</span>
                 <span>阅读   {{article.viewCounts}}</span>
                 <span>评论   {{article.commentCounts}}</span>
+                <span> 文章作者id: {{article.author.id}}</span>
+                <span> 储存的id: {{$store.state.id}}</span>
               </div>
-
+<!-- icon="el-icon-edit" -->
+<!-- v-if="this.article.author.id == this.$store.state.id" -->
             </div>
             <el-button
-              v-if="this.article.author.id == this.$store.state.id"
+             
+
               @click="editArticle()"
               style="position: absolute;left: 60%;"
-              size="mini"
-              round
-              icon="el-icon-edit">编辑</el-button>
+              size="mini" round="true" icon="el-icon-edit">编辑</el-button>
           </div>
           <div class="me-view-content">
             <markdown-editor :editor=article.editor></markdown-editor>
